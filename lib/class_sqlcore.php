@@ -665,7 +665,7 @@ class SQLCore
 				DETERMINISTIC
 				NO SQL
 			BEGIN
-				RETURN IF(played > 0,100*(won+draw/2)/played,0);
+				RETURN IFNULL(100*(won+draw/2)/played,0);
 			END',
 
 			/*
